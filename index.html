@@ -7,6 +7,47 @@
 .app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{background:var(--navy);color:#dce7f4;padding:22px 15px;display:flex;flex-direction:column;gap:8px}.sidebar .brand{padding:0 8px 24px}.sidebar .brand-mark{background:#fff;color:var(--navy)}.nav-label{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:#8fa6bf;padding:18px 10px 6px}.nav-btn{width:100%;text-align:left;border:0;background:transparent;color:#dce7f4;padding:11px 12px;border-radius:8px}.nav-btn:hover,.nav-btn.active{background:#254565;color:white}.sidebar-foot{margin-top:auto;border-top:1px solid #34506e;padding:15px 8px;color:#c4d2e2;font-size:12px}.sidebar-foot strong{display:block;color:white;margin-bottom:5px}.main{min-width:0}.topbar{height:72px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;gap:15px}.topbar h2{font-size:17px;margin:0}.topbar-right{display:flex;gap:10px;align-items:center}.content{padding:26px 28px;max-width:1500px;margin:auto}.welcome{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:20px}.welcome h1{margin:0 0 6px;font-size:24px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}.stat-label{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.6px}.stat{font-size:29px;font-weight:800;margin:9px 0}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 12px}.section-head h3{margin:0;font-size:16px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:650px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);font-size:13px}th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px}.badge{display:inline-block;border-radius:20px;padding:4px 8px;background:#edf3f9;color:#31506e;font-size:11px;font-weight:700}.badge.green{background:#e7f6ef;color:#16875d}.badge.amber{background:#fff5df;color:#9a6a15}.badge.red{background:#fff0f0;color:#b43d3d}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.toolbar input,.toolbar select{min-width:150px}.two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.integration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.integration{display:flex;flex-direction:column;gap:12px}.integration .ico{width:42px;height:42px;border-radius:12px;background:#edf3f9;display:grid;place-items:center;font-size:20px;font-weight:800;color:#24517e}.integration h3{margin:0}.integration p{color:var(--muted);line-height:1.5;margin:0;min-height:40px}.integration .btn{align-self:flex-start}.statusline{font-size:11px;color:var(--amber);font-weight:800}.modal{position:fixed;inset:0;background:#07182d88;display:grid;place-items:center;padding:18px;z-index:10}.modal-box{background:white;border-radius:14px;width:min(650px,100%);max-height:90vh;overflow:auto;padding:22px}.modal-head{display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.form-grid .wide{grid-column:1/-1}.empty{padding:25px;text-align:center;color:var(--muted)}.notice{padding:12px;border-radius:9px;background:#fff6e5;color:#77551b;line-height:1.5;margin-bottom:15px}.copilot-answer{white-space:pre-wrap;line-height:1.6;background:#f5f8fc;border-radius:9px;padding:14px;margin-top:12px}.mobile{display:none}
 @media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}.integration-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){.app{grid-template-columns:1fr}.sidebar{display:none}.sidebar.open{display:flex;position:fixed;z-index:5;inset:0 auto 0 0;width:260px}.mobile{display:inline-block}.topbar{padding:0 15px}.content{padding:18px 14px}.two-col{grid-template-columns:1fr}.integration-grid{grid-template-columns:1fr}.welcome{align-items:flex-start;flex-direction:column}}
+
+/* PCAS presentation theme: matched to the supplied management dashboard slide */
+:root{--navy:#06366f;--blue:#0878dc;--ink:#082f67;--muted:#55749a;--line:#cfe3f7;--bg:#eaf4fd;--white:#fff;--green:#0ca879;--red:#ef5350;--amber:#e8a323}
+body{background:linear-gradient(135deg,#edf7ff 0%,#e4f1fc 100%);color:var(--ink)}
+#auth{background:linear-gradient(135deg,#032b61 0%,#0756a5 55%,#1688e5 100%)}
+.auth-card{border:1px solid #c5e1fb;box-shadow:0 24px 70px #032b6155}
+.brand-mark{background:linear-gradient(135deg,#0878dc,#00a7a0);box-shadow:0 5px 16px #0878dc35}
+.app{background:#eaf4fd}
+.sidebar{background:linear-gradient(180deg,#032b61 0%,#064b91 100%);color:#eaf5ff}
+.sidebar .brand-mark{background:linear-gradient(135deg,#0b83e9,#00a69a);color:#fff}
+.sidebar .brand{border-bottom:1px solid #ffffff22;padding-bottom:22px}
+.nav-label{color:#91c5f0}
+.nav-btn{color:#e0efff;border-radius:9px}
+.nav-btn:hover,.nav-btn.active{background:linear-gradient(90deg,#0879d9,#1265b5);color:#fff;box-shadow:inset 4px 0 #27d4e0}
+.sidebar-foot{border-top:1px solid #ffffff2b;color:#c9e3fb}
+.topbar{background:linear-gradient(100deg,#073b7d 0%,#075eae 58%,#0878d5 100%);border-bottom:1px solid #0a579c;color:#fff}
+.topbar h2{color:#fff}
+.topbar .muted{color:#d7ebff}
+.content{max-width:1600px}
+.welcome{background:linear-gradient(110deg,#0756a8 0%,#087fdb 58%,#45a6eb 100%);color:white;border-radius:14px;padding:23px 25px;box-shadow:0 8px 22px #0756a820}
+.welcome h1,.welcome .muted{color:#fff}
+.card{background:linear-gradient(145deg,#fff 0%,#f8fcff 100%);border:1px solid #c8e2f8;box-shadow:0 3px 12px #0a4b8710}
+.stat-label{color:#52769d}
+.stat{color:#073a7b}
+.section-head h3{color:#073a7b}
+.btn{background:linear-gradient(135deg,#087fe5,#075db8);box-shadow:0 3px 9px #0878dc28}
+.btn:hover{filter:brightness(1.06)}
+.btn.secondary{background:#e2f1ff;color:#07539b;border:1px solid #c3e0fa;box-shadow:none}
+.btn.danger{background:#fff0f0;color:#b43d3d}
+input,select,textarea,.field input,.field select,.field textarea{border-color:#c6def3;background:#fff}
+th{color:#52769d;background:#f0f7fe}
+td{border-bottom-color:#e0edf8}
+.badge{background:#e5f2ff;color:#07539b}
+.badge.green{background:#dcf8ec;color:#087d5d}
+.badge.amber{background:#fff2d8;color:#9a6508}
+.badge.red{background:#ffe9e8;color:#b43d3d}
+.integration .ico{background:linear-gradient(135deg,#e4f3ff,#d5ebff);color:#0867c1;border:1px solid #c5e2fb}
+.notice{background:#e5f4ff;border:1px solid #b9ddfa;color:#164f86}
+.copilot-answer{background:#edf7ff;border:1px solid #d1e7fa;color:#123f70}
+.modal-box{border:1px solid #c8e2f8;box-shadow:0 18px 55px #032b6140}
+
 </style></head><body>
 <section id="auth"><form class="auth-card" id="login-form"><div class="brand"><div class="brand-mark">P</div><div>PCAS<div class="muted" style="font-size:12px;font-weight:400">Project Coordination Workspace</div></div></div><h1>Sign in</h1><p class="muted">Access your organisation's shared project workspace.</p><div class="field"><label>Email address</label><input id="email" type="email" autocomplete="username" required></div><div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password" required></div><div id="login-error" class="error"></div><button class="btn" id="login-btn">Sign in</button><p class="muted" style="font-size:12px;text-align:center">Secure session · Access depends on your assigned role</p></form></section>
 <div id="workspace" class="app hidden">
