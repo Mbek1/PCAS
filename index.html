@@ -147,7 +147,7 @@ function milestonesPanel(){
  const rows=items.map((m,i)=>`<div class="milestone-row"><span class="milestone-flag">⚑</span><span><b>${esc(m.name)}</b><small>${m.type}</small></span><time>${dateLabel(m.date)}</time></div>`).join('');
  return `<div class="card"><div class="section-head" style="margin-top:0"><h3>Upcoming Milestones</h3><span class="muted">Next deadlines</span></div>${items.length?'<div class="milestone-list">'+rows+'</div>':'<div class="empty">No upcoming milestones have been scheduled.</div>'}</div>`;
 }
-function api(path,opts={}){const res=await fetch(API+path,{...opts,headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{}),...(opts.headers||{})}});const body=await res.json().catch(()=>({message:'Unexpected server response'}));if(!res.ok)throw Error(body.message||'Request failed');return body}
+async function api(path,opts={}){const res=await fetch(API+path,{...opts,headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{}),...(opts.headers||{})}});const body=await res.json().catch(()=>({message:'Unexpected server response'}));if(!res.ok)throw Error(body.message||'Request failed');return body}
 function toast(msg){alert(msg)}
 function canManage(){return ['EA_ADMIN','PROJECT_MANAGER'].includes(user?.role)}
 function showLogin(){token='';user=null;localStorage.removeItem(TOKEN);$('#workspace').classList.add('hidden');$('#auth').classList.remove('hidden')}
