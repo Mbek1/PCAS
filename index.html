@@ -150,6 +150,7 @@ function milestonesPanel(){
 }
 async function api(path,opts={}){const res=await fetch(API+path,{...opts,headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{}),...(opts.headers||{})}});const body=await res.json().catch(()=>({message:'Unexpected server response'}));if(!res.ok)throw Error(body.message||'Request failed');return body}
 function toast(msg){alert(msg)}
+function esc(value){return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
 function roleName(role){return ({EA_ADMIN:'Executive Assistant / Administrator',PROJECT_MANAGER:'Project Manager',TEAM_MEMBER:'Team Member',EXECUTIVE_VIEWER:'Executive Viewer'})[role]||'User'}
 function canManage(){return ['EA_ADMIN','PROJECT_MANAGER'].includes(user?.role)}
 function showLogin(){token='';user=null;localStorage.removeItem(TOKEN);$('#workspace').classList.add('hidden');$('#auth').classList.remove('hidden')}
