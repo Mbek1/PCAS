@@ -150,6 +150,7 @@ function milestonesPanel(){
 }
 async function api(path,opts={}){const res=await fetch(API+path,{...opts,headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{}),...(opts.headers||{})}});const body=await res.json().catch(()=>({message:'Unexpected server response'}));if(!res.ok)throw Error(body.message||'Request failed');return body}
 function toast(msg){alert(msg)}
+function roleName(role){return ({EA_ADMIN:'Executive Assistant / Administrator',PROJECT_MANAGER:'Project Manager',TEAM_MEMBER:'Team Member',EXECUTIVE_VIEWER:'Executive Viewer'})[role]||'User'}
 function canManage(){return ['EA_ADMIN','PROJECT_MANAGER'].includes(user?.role)}
 function showLogin(){token='';user=null;localStorage.removeItem(TOKEN);$('#workspace').classList.add('hidden');$('#auth').classList.remove('hidden')}
 async function load(){loadWarnings=[];const results=await Promise.allSettled([api('/users'),api('/projects'),api('/tasks')]);const names=['team members','projects','tasks'];results.forEach((r,i)=>{if(r.status==='fulfilled'){if(i===0)users=r.value.users||[];if(i===1)projects=r.value.projects||[];if(i===2)tasks=r.value.tasks||[]}else{loadWarnings.push('Could not load '+names[i]+': '+r.reason.message)}});try{logs=(await api('/audit')).logs||[]}catch(e){logs=[];if(e.message!=='You do not have permission to perform this action.')loadWarnings.push('Audit activity is unavailable: '+e.message)}return loadWarnings}
